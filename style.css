@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EAFBFF;
+    background-image: linear-gradient(to bottom, #EAFBFF 0%, #EAFBFF 50%, #5290F9 50%, #5290F9 100%);
+    font-family: "Mulish", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+nav {
+    background-color: #fff;
+    width: 80px;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.6s linear;
+}
+
+nav.active {
+    width: 350px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    width: 0;
+    margin: 0;
+    padding: 0;
+    transition: width 0.6s linear;
+}
+
+nav.active ul {
+    width: 100%;
+}
+
+li {
+    opacity: 0;
+    transform: rotateY(0deg);
+    transition: opacity 0.6s linear, transform 0.6s linear;
+}
+
+nav.active li {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+li a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.icon {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+
+.icon:focus {
+    outline: 0;
+}
+
+.icon .line {
+    position: absolute;
+    background-color: #5290F9;
+    height: 2px;
+    width: 20px;
+    top: 10px;
+    left: 5px;
+    transition: transform 0.6s linear;
+}
+
+.icon .line2 {
+    top: auto;
+    bottom: 10px;
+}
+
+nav.active .icon .line1 {
+    transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .icon .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+}
+
+
+
+
